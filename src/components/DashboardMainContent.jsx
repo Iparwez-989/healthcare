@@ -9,10 +9,10 @@ import ActivityFeed from './ActivityFeed';
 const DashboardMainContent = () => {
   return (
     <main className="dashboard-content">
-      <div className="dashboard-header">
+      {/* <div className="dashboard-header">
         <h2>Health Overview</h2>
         <p className="date">Wednesday, May 23, 2025</p>
-      </div>
+      </div> */}
       
       <div className="dashboard-grid">
         <div className="grid-item anatomy-section">

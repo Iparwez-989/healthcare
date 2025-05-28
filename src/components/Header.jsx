@@ -20,7 +20,7 @@ const Header = () => {
         <div className="user-profile">
           <img src={userAvatar} alt="User Avatar" className="avatar" />
           <div className="user-info">
-            <p className="user-name">John Doe</p>
+            <p className="user-name">Patient name</p>
             <p className="user-role">Patient</p>
           </div>
         </div>
