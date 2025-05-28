@@ -1,0 +1,767 @@
+/* Header Component */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  width: 200px;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--danger-color);
+  color: white;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+/* Sidebar Component */
+.sidebar {
+  width: 250px;
+  background-color: white;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-nav li {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 0 10px;
+  transition: var(--transition);
+}
+
+.sidebar-nav li:hover {
+  background-color: rgba(74, 108, 247, 0.1);
+}
+
+.sidebar-nav li.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-nav .icon {
+  font-size: 1.2rem;
+}
+
+.sidebar-footer {
+  padding: 0 20px 20px;
+}
+
+.help-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: #f5f7fa;
+  border-radius: var(--border-radius);
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.help-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Dashboard Main Content */
+.dashboard-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.date {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  grid-template-areas:
+    "anatomy health calendar"
+    "anatomy schedule activity";
+}
+
+.grid-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.anatomy-section {
+  grid-area: anatomy;
+  height: 75%;
+    position: relative;
+    bottom: 5px;
+}
+
+.health-status {
+  grid-area: health;
+  height: 100%;
+  position: relative;  
+  bottom: 2rem;
+}
+
+.calendar-section {
+  grid-area: calendar;
+  height: 100%;
+  position: relative;  
+  bottom: 2rem;
+}
+
+.schedule-section {
+  grid-area: schedule;
+  height: 62%;
+  position: relative;  
+  bottom: 2rem;
+  overflow: hidden;
+}
+
+.activity-section {
+  grid-area: activity;
+  position: relative;  
+  bottom: 2rem;
+    height: 60%;
+    overflow: hidden;
+}
+
+/* Anatomy Section */
+.anatomy-container h3 {
+  margin-bottom: 15px;
+}
+
+.anatomy-content {
+  display: flex;
+  gap: 20px;
+}
+
+.anatomy-image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.anatomy-image img {
+  max-height: 400px;
+}
+
+.organ-marker {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.organ-marker.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.3);
+}
+
+.organ-marker img {
+  width: 18px;
+  height: 18px;
+}
+
+.organ-marker.heart {
+  top: 30%;
+  left: 50%;
+}
+
+.organ-marker.lungs {
+  top: 25%;
+  left: 45%;
+}
+
+.organ-marker.teeth {
+  top: 15%;
+  left: 50%;
+}
+
+.organ-marker.bones {
+  top: 50%;
+  left: 40%;
+}
+
+.organ-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.organ-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.organ-card:hover {
+  background-color: #f5f7fa;
+}
+
+.organ-card.active {
+  background-color: rgba(74, 108, 247, 0.1);
+}
+
+.organ-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.organ-info h4 {
+  margin-bottom: 5px;
+}
+
+.status {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.status.good {
+  background-color: #e2ffe9;
+  color: #28a745;
+}
+
+.status.excellent {
+  background-color: #e2f5ff;
+  color: #17a2b8;
+}
+
+.status.needs-attention {
+  background-color: #ffe2e5;
+  color: #dc3545;
+}
+
+/* Health Status Cards */
+.health-status-container h3 {
+  margin-bottom: 15px;
+}
+
+.health-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.health-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.card-content h4 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.trend {
+  font-size: 0.8rem;
+}
+
+.trend.up {
+  color: var(--danger-color);
+}
+
+.trend.down {
+  color: var(--success-color);
+}
+
+/* Calendar View - Compact Dashboard Version */
+.calendar-container {
+  margin-bottom: 10px;
+  max-width: 280px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.calendar-header h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-controls button {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.calendar-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-controls span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  min-width: 70px;
+  text-align: center;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.today {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day:hover:not(.empty):not(.today) {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.has-appointment {
+  font-weight: 600;
+}
+
+.appointment-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.calendar-day.today .appointment-dot {
+  background-color: white;
+}
+
+.appointment-dot {
+  position: absolute;
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.calendar-day.today .appointment-dot {
+  background-color: white;
+}
+
+/* Upcoming Schedule */
+.schedule-container h3 {
+  margin-bottom: 15px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add-appointment {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.add-appointment:hover {
+  background-color: #3a5bd9;
+}
+
+.add-appointment img {
+  width: 16px;
+  height: 16px;
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Simple Appointment Card */
+.appointment-card {
+  display: flex;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #ccc;
+}
+
+.appointment-card.high {
+  border-left-color: var(--danger-color);
+}
+
+.appointment-card.normal {
+  border-left-color: var(--primary-color);
+}
+
+.appointment-card.low {
+  border-left-color: var(--success-color);
+}
+
+.appointment-time {
+  min-width: 80px;
+}
+
+.appointment-time .date {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.appointment-time .time {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.appointment-details {
+  flex: 1;
+}
+
+.appointment-details h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.appointment-details .doctor,
+.appointment-details .location {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.appointment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.appointment-actions button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.reschedule-btn {
+  background-color: #e2f5ff;
+  color: var(--primary-color);
+}
+
+.reschedule-btn:hover {
+  background-color: #d0ebff;
+}
+
+.cancel-btn {
+  background-color: #ffe2e5;
+  color: var(--danger-color);
+}
+
+.cancel-btn:hover {
+  background-color: #ffd0d5;
+}
+
+/* Activity Feed */
+.activity-container h3 {
+  margin-bottom: 15px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  display: flex;
+  gap: 15px;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.activity-item.medication .activity-icon {
+  background-color: #ffe2e5;
+}
+
+.activity-item.appointment .activity-icon {
+  background-color: #e2f5ff;
+}
+
+.activity-item.test .activity-icon {
+  background-color: #e2ffe9;
+}
+
+.activity-item.message .activity-icon {
+  background-color: #fff4e2;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-content h4 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.activity-content p {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.activity-time {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "anatomy health"
+      "anatomy calendar"
+      "schedule activity";
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "anatomy"
+      "health"
+      "calendar"
+      "schedule"
+      "activity";
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 10px 0;
+  }
+  
+  .sidebar-nav ul {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .sidebar-nav li {
+    white-space: nowrap;
+  }
+  
+  .sidebar-footer {
+    display: none;
+  }
+  
+  .dashboard-content {
+    margin-left: 0;
+  }
+  
+  .health-cards {
+    grid-template-columns: 1fr;
+  }
+}
